@@ -1,18 +1,23 @@
 import { Col } from 'antd'
 import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { getPokemon } from './api/getPokemon'
 import './App.css'
 import { PokemonList } from './components/PokemonList'
 import Searcher from './components/Searcher'
+import { setPokemons } from './redux/actions'
+import { selectPokemons } from './redux/reducers/pokemons'
 import logo from './statics/logo.svg'
-import { connectorPokemon, PropsPokemonsFromRedux } from './redux/reducers/pokemons'
 
-function App({ pokemons, setPokemons }: PropsPokemonsFromRedux) {
+function App() {
+  const pokemons = useSelector(selectPokemons);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const fetchPokemon = async () => {
       const pokemonsRes = await getPokemon()
       const items = pokemonsRes || [];
-      setPokemons(items);
+      dispatch(setPokemons(items));
     }
     fetchPokemon();
   }, []);
@@ -30,4 +35,4 @@ function App({ pokemons, setPokemons }: PropsPokemonsFromRedux) {
   )
 }
 
-export default connectorPokemon(App)
+export default App

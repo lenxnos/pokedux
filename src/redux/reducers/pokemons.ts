@@ -1,6 +1,4 @@
-import { connect, ConnectedProps } from "react-redux";
 import { AnyAction } from "redux";
-import { setPokemons } from '../actions';
 import { SET_POKEMONS } from "../actions/type"
 
 interface PokemonState {
@@ -20,14 +18,4 @@ export const pokemonsReducer = (state = initialState, action: AnyAction) => {
   }
 }
 
-export const mapStatePokemons = (state: PokemonState) => ({
-  pokemons: state.pokemons,
-});
-
-export const mapDispatchPokemons = {
-  setPokemons,
-}
-
-export const connectorPokemon = connect(mapStatePokemons, mapDispatchPokemons);
-
-export type PropsPokemonsFromRedux = ConnectedProps<typeof connectorPokemon>
+export const selectPokemons = (state: PokemonState) => state.pokemons;
