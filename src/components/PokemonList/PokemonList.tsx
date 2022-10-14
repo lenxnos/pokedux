@@ -1,16 +1,20 @@
 import { FC } from 'react'
+import { PokemonType } from '../../models/Pokemons';
 import PokemonCard from '../PokemonCard';
 import './style.css'
 
 interface Props {
-  pokemons: any[],
+  pokemons: PokemonType[],
 }
 
 const PokemonList: FC<Props> = ({ pokemons }) => {
   return (
     <div className="PokemonList">
       {pokemons.map((pokemon) => (
-        <PokemonCard />
+        <PokemonCard
+          key={pokemon.name}
+          name={pokemon.name}
+        />
       ))}
     </div>
   )
