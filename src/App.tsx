@@ -1,16 +1,13 @@
 import { Col } from 'antd'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { getPokemon } from './api/getPokemon'
 import './App.css'
 import { PokemonList } from './components/PokemonList'
 import Searcher from './components/Searcher'
-import { PokemonType } from './models/Pokemons'
 import logo from './statics/logo.svg'
+import { connectorPokemon, PropsPokemonsFromRedux } from './redux/reducers/pokemons'
 
-function App() {
-
-  const [pokemons, setPokemons] = useState<PokemonType[]>([]);
-
+function App({ pokemons, setPokemons }: PropsPokemonsFromRedux) {
   useEffect(() => {
     const fetchPokemon = async () => {
       const pokemonsRes = await getPokemon()
@@ -33,4 +30,4 @@ function App() {
   )
 }
 
-export default App
+export default connectorPokemon(App)
