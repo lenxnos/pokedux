@@ -6,7 +6,9 @@ import { legacy_createStore as createStore } from 'redux';
 import App from './App'
 import './index.css'
 
-const store = createStore(pokemonsReducer);
+const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+
+const store = createStore(pokemonsReducer, composeEnhancers);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
