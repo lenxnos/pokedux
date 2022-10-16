@@ -1,7 +1,7 @@
 import { AnyAction } from "redux";
 import { SET_POKEMONS } from "../actions/type"
 
-interface PokemonState {
+export interface PokemonState {
   pokemons: []
 }
 

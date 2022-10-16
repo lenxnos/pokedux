@@ -5,12 +5,13 @@ import { FC } from 'react';
 
 interface Props {
   name: string;
+  image: string;
 }
 
-const PokemonCard: FC<Props> = ({ name  }) => (
+const PokemonCard: FC<Props> = ({ name, image  }) => (
   <Card
     title={name}
-    cover={<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png' alt={name} />}
+    cover={<img src={image} alt={name} />}
     style={{ width: 250 }}
     extra={<StarOutlined />}
   >

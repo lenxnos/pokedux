@@ -1,10 +1,10 @@
 import { FC } from 'react'
-import { PokemonType } from '../../models/Pokemons';
+import { PokemonStore } from '../../models/Pokemons';
 import PokemonCard from '../PokemonCard';
 import './style.css'
 
 interface Props {
-  pokemons: PokemonType[],
+  pokemons: PokemonStore[],
 }
 
 const PokemonList: FC<Props> = ({ pokemons }) => {
@@ -14,6 +14,7 @@ const PokemonList: FC<Props> = ({ pokemons }) => {
         <PokemonCard
           key={pokemon.name}
           name={pokemon.name}
+          image={pokemon.sprites.front_default}
         />
       ))}
     </div>
