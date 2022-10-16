@@ -1,5 +1,4 @@
-import { Dispatch } from "react";
-import { AnyAction } from "redux";
+import { AnyAction, Dispatch } from "redux";
 import { getPokemonDetails } from "../../api";
 import { PokemonDetailDTO, PokemonType } from "../../models/Pokemons";
 import { SET_POKEMONS } from "./type";
