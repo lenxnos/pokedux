@@ -11,6 +11,7 @@ specifiers:
   react-dom: ^18.2.0
   react-redux: ^8.0.4
   redux: ^4.2.0
+  redux-thunk: ^2.4.1
   typescript: ^4.6.4
   vite: ^3.1.0
 
@@ -22,6 +23,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-redux: 8.0.4_yfr4m6wk75wdra335rld4tkrbu
   redux: 4.2.0
+  redux-thunk: 2.4.1_redux@4.2.0
 
 devDependencies:
   '@types/react': 18.0.21
@@ -1598,6 +1600,14 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
+
+  /redux-thunk/2.4.1_redux@4.2.0:
+    resolution: {integrity: sha512-OOYGNY5Jy2TWvTL1KgAlVy6dcx3siPJ1wTq741EPyUKfn6W6nChdICjZwCd0p8AZBs5kWpZlbkXW2nE/zjUa+Q==}
+    peerDependencies:
+      redux: ^4
+    dependencies:
+      redux: 4.2.0
     dev: false
 
   /redux/4.2.0:
