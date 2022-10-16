@@ -15,6 +15,8 @@ const PokemonList: FC<Props> = ({ pokemons }) => {
           key={pokemon.name}
           name={pokemon.name}
           image={pokemon.sprites.front_default}
+          types={pokemon.types}
+          isFavorite={pokemon.favorite}
         />
       ))}
     </div>

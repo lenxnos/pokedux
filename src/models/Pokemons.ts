@@ -1,15 +1,22 @@
-export type PokemonStore = {
+export type PokemonType = {
   name: string;
-  sprites: SpritesType 
+  url: string;
 }
 
-export type PokemonType = { 
+export type PokemonStore = {
+  name: string;
+  sprites: SpritesType,
+  types: PokemonType[],
+  favorite: boolean;
+}
+
+export type Pokemon = { 
   name: string;
   url: string;
 }
 
 export type GetPokemonResponse = {
-  results: PokemonType[];
+  results: Pokemon[];
 }
 
 export type SpritesType = {
@@ -26,4 +33,8 @@ export type SpritesType = {
 export interface PokemonDetailDTO {
   name: string;
   sprites: SpritesType
+  types: {
+    slot: number,
+    type: PokemonType,
+  }[]
 }

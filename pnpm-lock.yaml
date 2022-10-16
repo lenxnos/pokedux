@@ -4,13 +4,16 @@ specifiers:
   '@ant-design/icons': ^4.7.0
   '@types/react': ^18.0.17
   '@types/react-dom': ^18.0.6
+  '@types/redux-immutable': 4.0.3
   '@vitejs/plugin-react': ^2.1.0
   antd: ^4.23.5
   axios: ^1.1.2
+  immutable: ^4.1.0
   react: ^18.2.0
   react-dom: ^18.2.0
   react-redux: ^8.0.4
   redux: ^4.2.0
+  redux-immutable: ^4.0.0
   redux-thunk: ^2.4.1
   typescript: ^4.6.4
   vite: ^3.1.0
@@ -19,15 +22,18 @@ dependencies:
   '@ant-design/icons': 4.7.0_biqbaboplfbrettd7655fr4n2y
   antd: 4.23.5_biqbaboplfbrettd7655fr4n2y
   axios: 1.1.2
+  immutable: 4.1.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-redux: 8.0.4_yfr4m6wk75wdra335rld4tkrbu
   redux: 4.2.0
+  redux-immutable: 4.0.0_immutable@4.1.0
   redux-thunk: 2.4.1_redux@4.2.0
 
 devDependencies:
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
+  '@types/redux-immutable': 4.0.3
   '@vitejs/plugin-react': 2.1.0_vite@3.1.8
   typescript: 4.8.4
   vite: 3.1.8
@@ -309,7 +315,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.10
-    dev: false
 
   /@babel/template/7.18.10:
     resolution: {integrity: sha512-TI+rCtooWHr3QJ27kJxfjutghu44DLnasDMwpDqCXVTal9RLp3RSYNh4NdBrRP2cQAoG9A8juOQl6P6oZG4JxA==}
@@ -429,6 +434,13 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
       csstype: 3.1.1
+
+  /@types/redux-immutable/4.0.3:
+    resolution: {integrity: sha512-wXUApt9ib9MGUqoHUMbQmQhqCkvykMHBW3z/P7DISMigFGpGRQ0kkbv7we0XNiv5sYEtEiZzNCEDm+W6ei04DA==}
+    dependencies:
+      immutable: 4.1.0
+      redux: 4.2.0
+    dev: true
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
@@ -912,6 +924,9 @@ packages:
     dependencies:
       react-is: 16.13.1
     dev: false
+
+  /immutable/4.1.0:
+    resolution: {integrity: sha512-oNkuqVTA8jqG1Q6c+UglTOD1xhC1BtjKI7XkCXRkZHrN5m18/XsnUp8Q89GkQO/z+0WjonSvl0FLhDYftp46nQ==}
 
   /is-core-module/2.10.0:
     resolution: {integrity: sha512-Erxj2n/LDAZ7H8WNJXd9tw38GYM3dv8rk8Zcs+jJuxYTW7sozH+SS8NtrSjVL1/vpLvWi1hxy96IzjJ3EHTJJg==}
@@ -1602,6 +1617,14 @@ packages:
       loose-envify: 1.4.0
     dev: false
 
+  /redux-immutable/4.0.0_immutable@4.1.0:
+    resolution: {integrity: sha512-SchSn/DWfGb3oAejd+1hhHx01xUoxY+V7TeK0BKqpkLKiQPVFf7DYzEaKmrEVxsWxielKfSK9/Xq66YyxgR1cg==}
+    peerDependencies:
+      immutable: ^3.8.1 || ^4.0.0-rc.1
+    dependencies:
+      immutable: 4.1.0
+    dev: false
+
   /redux-thunk/2.4.1_redux@4.2.0:
     resolution: {integrity: sha512-OOYGNY5Jy2TWvTL1KgAlVy6dcx3siPJ1wTq741EPyUKfn6W6nChdICjZwCd0p8AZBs5kWpZlbkXW2nE/zjUa+Q==}
     peerDependencies:
@@ -1614,11 +1637,9 @@ packages:
     resolution: {integrity: sha512-oSBmcKKIuIR4ME29/AeNUnl5L+hvBq7OaJWzaptTQJAntaPvxIJqfnjbaEiCzzaIz+XmVILfqAM3Ob0aXLPfjA==}
     dependencies:
       '@babel/runtime': 7.19.4
-    dev: false
 
   /regenerator-runtime/0.13.10:
     resolution: {integrity: sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==}
-    dev: false
 
   /resize-observer-polyfill/1.5.1:
     resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}

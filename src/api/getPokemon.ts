@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { PokemonDetailDTO, GetPokemonResponse, PokemonType } from '../models/Pokemons';
+import { PokemonDetailDTO, GetPokemonResponse, Pokemon } from '../models/Pokemons';
 
 const POKEMON_LIST_URL = 'https://pokeapi.co/api/v2/pokemon?limit=151';
 
@@ -12,7 +12,7 @@ export const getPokemon = async () => {
   }
 }
 
-export const getPokemonDetails = async (pokemon: PokemonType) => {
+export const getPokemonDetails = async (pokemon: Pokemon) => {
   try {
     const { data } = await axios.get<PokemonDetailDTO>(pokemon.url);
     return data;
